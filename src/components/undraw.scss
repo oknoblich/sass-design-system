@@ -1,0 +1,87 @@
+@use 'sass:color';
+@import '../common';
+
+.undraw {
+  margin-top: -50px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 180px;
+
+  &.is-user {
+    max-width: 400px;
+    background: no-repeat center top / auto 150px url('../img/undraw/person-on-laptop.svg');
+  }
+
+  &.is-masterdata {
+    max-width: 400px;
+    margin-top: -230px;
+  }
+
+  &.is-mass-nutritions {
+    margin-top: -115px;
+    padding-top: 210px;
+    background: no-repeat center top / auto 170px url('../img/undraw/person-training.svg');
+  }
+
+  &.is-legal {
+    max-width: 670px;
+    margin-top: -80px;
+    background: no-repeat center top / auto 150px url('../img/undraw/person-with-papers.svg');
+  }
+
+  &.is-comingsoon {
+    max-width: 670px;
+    background: no-repeat center top / auto 150px url('../img/undraw/construction-workers.svg');
+  }
+
+  &.is-anamnesis {
+    position: relative;
+    max-width: 400px;
+    margin-top: -40px;
+    background: no-repeat center top / auto 150px url('../img/undraw/doctors.svg');
+  }
+
+  &.is-membership {
+    position: relative;
+    max-width: 400px;
+    background: no-repeat center top / auto 150px url('../img/undraw/people-making-contract.svg');
+  }
+
+  &.is-thankyou {
+    max-width: 400px;
+    text-align: center;
+    background: no-repeat center top / auto 150px url('../img/undraw/person-with-hearts.svg');
+  }
+
+  &.is-maintenance {
+    max-width: 400px;
+    text-align: center;
+    background: no-repeat center top / auto 150px url('../img/undraw/person-at-roadsign.svg');
+  }
+
+  &.is-welcome {
+    max-width: 670px;
+    min-height: 230px;
+    margin-top: -60px;
+    padding-top: 230px;
+    background:
+      no-repeat center 50px / auto 180px url('../img/undraw/people-celebrating-1.svg'),
+      no-repeat center top / auto 160px url('../img/undraw/people-celebrating-2.svg')
+    ;
+  }
+
+  &.is-own-overview {
+    background: no-repeat center top / auto 150px url('../img/undraw/person-cooking.svg');
+  }
+
+  &.is-own-food {
+    max-width: 400px;
+    margin-top: -80px;
+    background: no-repeat center top / auto 150px url('../img/undraw/people-eating.svg');
+  }
+
+  &.is-own-recipe {
+    max-width: 400px;
+    background: no-repeat center top / auto 150px url('../img/undraw/person-cooking.svg');
+  }
+}

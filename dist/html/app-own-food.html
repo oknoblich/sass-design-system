@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Own Food</title>
+
+  <link rel="stylesheet" href="../assets/css/index.min.css">
+
+</head>
+<body>
+
+  <div class="page">
+
+    <div class="header">
+      <div class="inner">
+        <a><img src="../assets/img/logo-white.svg"></a>
+        <nav>
+          <ul>
+            <li><a>Nav Item</a></li>
+            <li><div class="is-active"><div class="has-subnav">Nav Item</div></div></li>
+            <li><a>Nav Item</a></li>
+            <li><a>Nav Item</a></li>
+            <li><a>Nav Item</a></li>
+            <li><div><div class="has-subnav">Hello, Alexandra!</div><div class="nav-photo"></div></div></li>
+            <li class="offcanvas-toggle"><svg viewBox="0 0 100 100"><path d="m 70,33 h -40 c 0,0 -8.5,-0.149796 -8.5,8.5 0,8.649796 8.5,8.5 8.5,8.5 h 20 v -20"/><path d="m 70,50 h -40"/><path d="m 30,67 h 40 c 0,0 8.5,0.149796 8.5,-8.5 0,-8.649796 -8.5,-8.5 -8.5,-8.5 h -20 v 20"/></svg></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+    <main class="is-small-circle">
+      <div class="page-circle"></div>
+
+      <div class="container">
+        <div class="undraw is-own-food">
+          <div class="row">
+            <div class="col-12">
+              <h1>Nahrungsmittel erstellen</h1>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt maxime atque sapiente impedit rem illo! Quia non aliquam unde maxime molestias nisi quam? Tempora excepturi, voluptatum dolores assumenda dicta fugiat?</p>
+            </div>
+          </div>
+
+          <div class="row mt-4 pt-2">
+            <div class="col-12">
+              <h2>01. Daten</h2>
+            </div>
+            <div class="col-12">
+              <div class="input"><input name="name" type="text" placeholder=" " value=""><label>Name</label></div>
+            </div>
+            <div class="col-12">
+              <div class="input">
+                <select name="foodCategoryId">
+                  <option value="" disabled="">Bitte wählen</option>
+                  <option value="o2smo0">Backzutaten</option>
+                </select>
+                <label>Kategorie</label>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="input">
+                <select name="foodSubCategoryId">
+                  <option value="" disabled="">Bitte wählen</option>
+                  <option value="o2smo0">Backzutaten</option>
+                </select>
+                <label>Unterkategorie</label>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="input"><input role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="dropdown-87365759161424" aria-activedescendant="" type="text" autocomplete="off" placeholder=" " class="autocomplete-input" value=""><label>Quelle</label></div>
+            </div>
+            <div class="col-12">
+              <div class="input"><input name="barcodes" type="text" placeholder=" " value=""><label>Strichcode Nummer</label></div>
+            </div>
+          </div>
+
+          <div class="row mt-4 pt-2">
+            <div class="col-12">
+              <h2>02. Foto</h2>
+            </div>
+            <div class="col-12">
+              <div class="
+                imageupload
+                is-rectangle
+                ">
+                <div class="imageupload-input">
+                  <input type="file" accept="image/jpeg,image/jpg,image/png,image/gif">
+                  <div class="icon icon-camera-gray-2"></div>
+                  <span class="label">Bild auswählen</span><img style="display: none;">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row mt-4 pt-2">
+            <div class="col-12">
+              <h2>03. Nährwerte</h2>
+              <p>Alle Angaben beziehen sich auf 100 Gramm.</p>
+            </div>
+            <div class="col-12">
+              <h3>Welche Nährwerte hat das Nahrungsmittel?</h3>
+            </div>
+            <div class="col-12">
+              <div class="input  "><input type="text" placeholder=" " value=""><label>Kalorien</label></div>
+            </div>
+            <div class="col-12">
+              <div class="input  "><input type="text" placeholder=" " value=""><label>Protein</label></div>
+            </div>
+            <div class="col-12">
+              <div class="input  "><input type="text" placeholder=" " value=""><label>Kohlenhydrate</label></div>
+            </div>
+            <div class="col-12">
+              <div class="input  "><input type="text" placeholder=" " value=""><label>Fett</label></div>
+            </div>
+            <div class="col-12">
+              <div class="input  "><input type="text" placeholder=" " value=""><label>Nahrungsfasern</label></div>
+            </div>
+            <div class="col-12">
+              <div class="input  "><input type="text" placeholder=" " value=""><label>Alkohol</label></div>
+            </div>
+            <div class="col-12">
+              <div class="input  "><input type="text" placeholder=" " value=""><label>Zucker</label></div>
+            </div>
+            <div class="col-12">
+              <div class="input  "><input type="text" placeholder=" " value=""><label>Salz</label></div>
+            </div>
+          </div>
+
+          <div class="row mt-4 pt-2">
+            <div class="col-12">
+              <h2>04. Menge</h2>
+            </div>
+            <div class="col-12">
+              <h3>Um welche Menge handelt es sich?</h3>
+            </div>
+            <div class="col-6">
+              <div class="input">
+                <select name="unit">
+                  <option value="" disabled="">Bitte wählen</option>
+                  <option value="SCOOP">Kugel</option>
+                </select>
+                <label>Einheit</label>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="input  "><input type="text" placeholder=" " value=""><label>Gramm pro Einheit</label></div>
+            </div>
+          </div>
+
+          <div class="row mt-4 pt-2">
+            <div class="col-12">
+              <h2>05. Beschreibung</h2>
+            </div>
+            <div class="col-12">
+              <div class="rdw-editor-wrapper" aria-label="rdw-wrapper">
+                <div class="rdw-editor-toolbar" aria-label="rdw-toolbar" aria-hidden="false" style="visibility: visible;">
+                  <div class="rdw-inline-wrapper" aria-label="rdw-inline-control">
+                    <div class="rdw-option-wrapper">IMG</div>
+                    <div class="rdw-option-wrapper">IMG</div>
+                    <div class="rdw-option-wrapper">IMG</div>
+                    <div class="rdw-option-wrapper">IMG</div>
+                    <div class="rdw-option-wrapper">IMG</div>
+                  </div>
+                </div>
+                <div class="rdw-editor-main">
+                  <div class="DraftEditor-root">
+                    <div class="DraftEditor-editorContainer">
+                      <div aria-describedby="placeholder-8p95n" aria-label="rdw-editor" class="notranslate public-DraftEditor-content" contenteditable="true" role="textbox" spellcheck="false" style="outline: none; user-select: text; white-space: pre-wrap; overflow-wrap: break-word;"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-12">
+              <button class="btn">Speichern</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer></footer>
+
+  </div>
+
+  <script src="../assets/js/header.js"></script>
+
+</body>
+</html>

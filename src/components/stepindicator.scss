@@ -1,0 +1,43 @@
+@use 'sass:color';
+@import '../common';
+
+.stepindicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  * {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    font-weight: 600;
+    color: $color-white;
+    border-radius: $radius-full;
+    border: 2px solid $color-white;
+  }
+
+  *:not(:first-child) {
+    margin-left: 10px;
+  }
+
+  .is-visited {
+    color: transparent;
+    background: $color-white no-repeat center / 20px $svg-input-check-blue;
+  }
+
+  .is-current {
+    color: $color-blue-1;
+    background: $color-white;
+  }
+}
+
+@media (min-width: $breakpoint-sm) {
+  .stepindicator {
+    *:not(:first-child) {
+      margin-left: 50px;
+    }
+  }
+}

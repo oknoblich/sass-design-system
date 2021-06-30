@@ -1,0 +1,57 @@
+@use 'sass:color';
+@import '../../common';
+
+a,
+button,
+input[type='button'],
+input[type='submit'] {
+  &.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 50px;
+    font-size: $text-medium;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    text-shadow: 0 1px 1px rgb(0 0 0 / 10%);
+    color: $color-white;
+    border-radius: $radius-full;
+    background: $color-blue-2;
+    transition: box-shadow $time;
+    cursor: pointer;
+
+    &.is-small {
+      height: 33px;
+      font-weight: unset;
+    }
+
+    &.is-tiny {
+      height: 23px;
+      font-size: $text-small;
+      font-weight: unset;
+    }
+
+    &:hover {
+      box-shadow: inset 0 0 0 100px rgb(0 25 50 / 12%);
+    }
+
+    &.is-secondary {
+      text-shadow: unset;
+      color: $color-gray-2;
+      background: $color-gray-4;
+
+      &:hover {
+        box-shadow: inset 0 0 0 100px rgb(0 25 50 / 5%);
+      }
+    }
+
+    &[disabled] {
+      text-shadow: unset;
+      color: $color-gray-2;
+      background: $inactive;
+      pointer-events: none;
+    }
+  }
+}

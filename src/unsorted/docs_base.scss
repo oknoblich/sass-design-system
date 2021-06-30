@@ -1,0 +1,137 @@
+@use 'sass:color';
+@import '../common';
+
+/* design-system.ebalance.dev
+ * ========================================================================== */
+
+/* Layout */
+
+.docs-grid-showcase {
+  padding: 15px 0;
+  font-family: Menlo, monospace;
+  font-size: $text-medium;
+  text-align: center;
+  background: $color-gray-4;
+}
+
+/* Components */
+
+.docs-progresscircle .progresscircle .circle circle {
+  --initialStroke: 0;
+  fill: none;
+  stroke-width: 6;
+  stroke-linecap: round;
+  stroke-dasharray: var(--initialStroke);
+  stroke-dashoffset: var(--initialStroke);
+  transition: stroke-dashoffset 1s ease;
+}
+
+/* Infos */
+
+.docs-info {
+  position: relative;
+  padding: 15px 20px;
+  font-size: $text-medium;
+  background: $color-gray-4;
+  border-left: 5px solid $color-blue-1;
+
+  &.is-monospace {
+    font-family: Menlo, monospace;
+  }
+}
+
+/* Examples */
+
+.docs-examples {
+  padding: 30px 20px;
+  font-size: $text-medium;
+  border-left: 5px solid $color-gray-4;
+}
+
+/* Logos */
+
+.docs-download-logo {
+  display: inline-flex;
+  padding: 20px;
+}
+
+/* Icons */
+
+.docs-icon-copy {
+  position: absolute;
+  opacity: 0;
+}
+
+.docs-icon {
+  position: relative;
+  padding: 5px;
+  border-radius: $radius-s;
+  transition: $time;
+  cursor: pointer;
+
+  .icon {
+    width: 25px;
+    height: 25px;
+    margin: auto;
+    pointer-events: none;
+  }
+
+  [class*='white'] {
+    filter: drop-shadow(0 1px 1px rgb(0 25 50 / 30%));
+  }
+
+  &:hover {
+    background: $color-gray-4;
+  }
+
+  &-copied::after {
+    content: '';
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    width: 16px;
+    height: 16px;
+    border-radius: $radius-full;
+    background: $color-blue-2 no-repeat center / 12px $svg-input-check-white;
+  }
+}
+
+/* Mobile Page Toggle */
+
+.docs-content {
+  > .toggle {
+    display: none;
+  }
+}
+
+@media (min-width: $breakpoint-lg) {
+  .docs-content {
+    position: relative;
+
+    > .toggle {
+      position: absolute;
+      top: 42px;
+      left: 50%;
+      z-index: 1;
+      display: inline-flex;
+      transform: translateX(-85px);
+    }
+
+    &.is-mobile {
+      .col-lg-4 {
+        width: 224px;
+      
+        .bo-card-iframe {
+          height: 320px;
+      
+          iframe {
+            width: 200%;
+            height: 200%;
+            border: 0;
+            transform: scale(.5, .5);
+          }
+        }
+      }
+    }
+  }
+}

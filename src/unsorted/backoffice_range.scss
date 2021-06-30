@@ -1,0 +1,45 @@
+@use 'sass:color';
+@import '../common';
+
+.bo-range {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 100%;
+  height: 20px;
+  padding: 0;
+  cursor: pointer;
+}
+
+.bo-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  margin-top: -8px;
+  border-radius: $radius-full;
+  border: 0;
+  background-color: $color-blue-2;
+}
+
+.bo-range::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 4px;
+  border-radius: $radius-full;
+  background-color: $color-gray-3;
+}
+
+.bo-range::-moz-range-thumb {
+  -moz-appearance: none;
+  width: 20px;
+  height: 20px;
+  margin-top: -8px;
+  border-radius: $radius-full;
+  border: 0;
+  background-color: $color-blue-2;
+}
+
+.bo-range::-moz-range-track {
+  width: 100%;
+  height: 4px;
+  border-radius: $radius-full;
+  background-color: $color-gray-3;
+}

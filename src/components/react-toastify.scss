@@ -1,0 +1,32 @@
+@use 'sass:color';
+@import '../common';
+
+.Toastify__toast {
+  min-height: auto !important;
+  margin-bottom: 0 !important;
+  font-family: inherit !important;
+  border-radius: 5px !important;
+  box-shadow: $global-shadow !important;
+}
+
+.Toastify__toast + .Toastify__toast {
+  margin-top: 20px !important;
+}
+
+.Toastify__toast-body {
+  padding: 12px 2px !important;
+}
+
+.Toastify__close-button {
+  opacity: 1 !important;
+}
+
+.Toastify__progress-bar {
+  height: 100% !important;
+  background: rgb(0 0 0 / 10%) !important;
+  opacity: 1 !important;
+}
+
+.Toastify__toast--success {
+  background: $color-blue-2 !important;
+}

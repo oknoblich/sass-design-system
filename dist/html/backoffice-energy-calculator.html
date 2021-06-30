@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Backoffice | Energy-Calculator</title>
+
+  <link rel="stylesheet" href="../assets/css/index.min.css">
+
+</head>
+<body>
+
+  <div class="bo-subheader">
+    <div>
+      Energy-Calculator
+    </div>
+  </div>
+
+  <div class="p-5">
+    <div class="container">
+      <form>
+        <div class="row">
+          <div class="col-12 col-lg-8 offset-lg-2">
+            <div class="row">
+              <div class="col-12 col-md-6">
+                <div class="input">
+                  <input type="text" placeholder=" ">
+                  <label>Weight</label>
+                </div>
+              </div>
+              <div class="col-12 col-md-6">
+                <div class="input">
+                  <input type="text" placeholder=" ">
+                  <label>Height</label>
+                </div>
+              </div>
+              <div class="col-12 col-md-6">
+                <div class="input">
+                  <input type="text" placeholder=" ">
+                  <label>Age</label>
+                </div>
+              </div>
+              <div class="col-12 col-md-6">
+                <div class="input">
+                  <select required>
+                    <option selected disabled>Please choose</option>
+                    <option>MALE</option>
+                    <option>FEMALE</option>
+                  </select>
+                  <label>Gender</label>
+                </div>
+              </div>
+              <div class="col-12">
+                <h3>Professional Motion</h3>
+              </div>
+              <div class="col-12 col-md-6">
+                <div class="input">
+                  <select required>
+                    <option selected disabled>Please choose</option>
+                    <option>INACTIVE</option>
+                    <option>VERY_LOW</option>
+                    <option>LOW</option>
+                    <option>MEDIUM</option>
+                    <option>HIGH</option>
+                  </select>
+                  <label>Level</label>
+                </div>
+              </div>
+              <div class="col-12 col-md-6">
+                <div class="input">
+                  <input type="number" placeholder=" ">
+                  <label>Value</label>
+                </div>
+              </div>
+              <div class="col-12 col-md-6">
+                <p class="mb-1">Working Hours</p>
+                <div class="row">
+                  <div class="col">
+                    <input type="range" value="0" min="0" max="40" class="bo-range">
+                  </div>
+                  <div class="col-2 text-right">
+                    <div>40</div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-md-6">
+                <div class="input">
+                  <input type="number" placeholder=" ">
+                  <label>Previous Failure Count</label>
+                </div>
+              </div>
+              <div class="col-12 col-md-6">
+                <p class="mb-1">Weight to Lose</p>
+                <div class="row">
+                  <div class="col">
+                    <input type="range" value="0" min="0" max="50" class="bo-range">
+                  </div>
+                  <div class="col-2 text-right">
+                    <div>5</div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-md-6">
+                <p class="mb-1">Goal Period (Weeks)</p>
+                <div class="row">
+                  <div class="col">
+                    <input type="range" value="0" min="0" max="50" class="bo-range">
+                  </div>
+                  <div class="col-2 text-right">
+                    <div>20</div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-md-6">
+                <label class="checkbox">
+                  <input type="checkbox" value="0">
+                  <span class="label">Parents Overweight?</span>
+                </label>
+              </div>
+              <div class="col-12 col-md-6">
+                <label class="checkbox">
+                  <input type="checkbox" value="0">
+                  <span class="label">Overweight for over two years?</span>
+                </label>
+              </div>
+              <div class="col-12 col-md-6 offset-lg-6">
+                <div class="row g-2">
+                  <div class="col-6">
+                    <button type="button" class="bo-button is-secondary">Example</button>
+                  </div>
+                  <div class="col-6">
+                    <button type="button" class="bo-button">Calculate</button>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12">
+<code>{
+  "activeMetabolicRate": 2593.4368,
+  "basalMetabolicRate": 1620.898,
+  "bmi": 29.387755102040817,
+  "energyReduction": 271.1734693877551,
+  "goal": 2322.2633306122448
+}</code>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+</body>
+</html>

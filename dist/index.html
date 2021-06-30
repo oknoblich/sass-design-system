@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Design System</title>
+
+  <link rel="icon" href="assets/img/vue-icon.svg">
+  <link rel="stylesheet" href="assets/css/index.min.css">
+
+</head>
+<body>
+
+  <div id="vue">
+
+    <div class="header is-white">
+      <div class="inner">
+        <a href="/" class="text-logo">Oliver Knoblich</a>
+        <nav>
+          <ul>
+            <li><a href="/react-admin-panel/"><span class="react">React</span>Admin Panel</a></li>
+            <li><a href="/react-book-store/"><span class="react">React</span>Book Store</a></li>
+            <li><a href="/react-budget-list/"><span class="react">React</span>Budget List</a></li>
+            <li><a href="/react-github-find/"><span class="react">React</span>GitHub Find</a></li>
+            <li><a href="/sass-design-system/" class="is-active"><span class="sass">Sass</span>Design System</a></li>
+            <li class="offcanvas-toggle">
+              <svg viewBox="0 0 100 100"><path d="m 70,33 h -40 c 0,0 -8.5,-0.149796 -8.5,8.5 0,8.649796 8.5,8.5 8.5,8.5 h 20 v -20"/><path d="m 70,50 h -40"/><path d="m 30,67 h 40 c 0,0 8.5,0.149796 8.5,-8.5 0,-8.649796 -8.5,-8.5 -8.5,-8.5 h -20 v 20"/></svg>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+    <div class="header is-white" style="position: static;">
+      <div class="inner">
+        <nav style="width: 100%;">
+          <ul style="justify-content: center;">
+            <li><router-link to="/" exact>Styleguide</router-link></li>
+            <li><router-link to="/typography">Typography</router-link></li>
+            <li><router-link to="/layout">Layout</router-link></li>
+            <li>
+              <div v-bind:class="{ 'router-link-active': $route.path.includes('components') }">
+                <div class="has-subnav">
+                  Components
+                </div>
+              </div>
+              <ul class="nav-subnav">
+                <li><router-link to="/components" exact>Overview</router-link></li>
+                <li><router-link to="/components/inputs">Inputs</router-link></li>
+                <li><router-link to="/components/backoffice">Backoffice UI</router-link></li>
+              </ul>
+            </li>
+            <li><router-link to="/illustrations">Illustrations</router-link></li>
+            <li><router-link to="/icons">Icons</router-link></li>
+            <li><router-link to="/pages">Pages</router-link></li>
+            <li class="offcanvas-toggle">
+              <svg viewBox="0 0 100 100">
+                <path class="line l1" d="m 70,33 h -40 c 0,0 -8.5,-0.149796 -8.5,8.5 0,8.649796 8.5,8.5 8.5,8.5 h 20 v -20"/>
+                <path class="line l2" d="m 70,50 h -40"/>
+                <path class="line l3" d="m 30,67 h 40 c 0,0 8.5,0.149796 8.5,-8.5 0,-8.649796 -8.5,-8.5 -8.5,-8.5 h -20 v 20"/>
+              </svg>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+    <div class="docs-content" v-bind:class="{ 'is-mobile': mobilePages }">
+
+      <label class="toggle" v-if="$route.path.includes('pages')">
+        <input type="checkbox" v-model="mobilePages">
+        <span class="label-left">Desktop</span>
+        <span class="label-right">Mobile</span>
+      </label>
+
+      <router-view></router-view>
+
+    </div>
+
+    <div class="offcanvas">
+      <div class="inner">
+        <nav>
+          <ul>
+            <li><router-link to="/" exact>Styleguide</router-link></li>
+            <li><router-link to="/layout">Layout</router-link></li>
+            <li>
+              <div v-bind:class="{ 'router-link-active': $route.path.includes('components') }">
+                <div class="has-subnav">
+                  Components
+                </div>
+              </div>
+              <ul>
+                <li><router-link to="/components" exact>Overview</router-link></li>
+                <li><router-link to="/components/inputs">Inputs</router-link></li>
+                <li><router-link to="/components/backoffice">Backoffice UI</router-link></li>
+              </ul>
+            </li>
+            <li><router-link to="/illustrations">Illustrations</router-link></li>
+            <li><router-link to="/icons">Icons</router-link></li>
+            <li><router-link to="/pages">Pages</router-link></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="pages/styleguide.html"></script>
+  <script src="pages/typography.html"></script>
+  <script src="pages/layout.html"></script>
+  <script src="pages/components.html"></script>
+  <script src="pages/components_overview.html"></script>
+  <script src="pages/components_inputs.html"></script>
+  <script src="pages/components_backoffice.html"></script>
+  <script src="pages/illustrations.html"></script>
+  <script src="pages/icons.html"></script>
+  <script src="pages/pages.html"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue-router@3.4.9/dist/vue-router.min.js"></script>
+
+  <script src="assets/js/vue-docs.js"></script>
+  <script src="assets/js/header.js"></script>
+  <script src="assets/js/off-canvas.js"></script>
+
+</body>
+</html>

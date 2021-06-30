@@ -1,0 +1,79 @@
+@use 'sass:color';
+@import '../common';
+
+body {
+  font: 16px/1.5 'Open Sans', sans-serif;
+}
+
+h1 {
+  font-size: 28px;
+  line-height: 1.2;
+  @include crop-whitespace(8, 7);
+}
+
+h2 {
+  font-size: 19px;
+  line-height: 1.2;
+  text-transform: uppercase;
+  @include crop-whitespace(5, 5);
+}
+
+h3 {
+  font-size: 16px;
+  @include crop-whitespace(7, 7);
+}
+
+h4,
+h5,
+h6 {
+  font-size: 14px;
+  @include crop-whitespace(7, 6);
+}
+
+p {
+  @include crop-whitespace(7, 6);
+}
+
+/* Text Styles */
+
+.text-small  { font-size: $text-small; }
+.text-medium { font-size: $text-medium; }
+.text-button { font-size: $text-medium; } /* only 1x in keycloak */
+
+.text-left   { text-align: left   !important; }
+.text-right  { text-align: right  !important; }
+.text-center { text-align: center !important; }
+
+ul {
+  list-style: none;
+}
+
+ol,
+article > ul,
+ul.text-list {
+  list-style: unset;
+  margin-left: 20px;
+  @include crop-whitespace(7, 7);
+}
+
+article > * + *,
+h1 + h2,
+h2 + h3,
+h3 + h4,
+h4 + h5,
+h5 + h6,
+h1 + p,
+h2 + p,
+h3 + p,
+h4 + p,
+h5 + p,
+h6 + p,
+p + h1,
+p + h2,
+p + h3,
+p + h4,
+p + h5,
+p + h6,
+p + p {
+  margin-top: $spacing-4;
+}

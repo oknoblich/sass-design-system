@@ -1,0 +1,58 @@
+@use 'sass:color';
+@import '../common';
+
+.bo-tabs {
+  border-bottom: 1px solid $color-gray-3;
+  background: $color-gray-4;
+
+  > ul {
+    display: flex;
+    justify-content: center;
+
+    > li {
+      > a {
+        display: block;
+        padding: 12px 25px;
+        font-size: $text-medium;
+        color: $color-gray-2;
+
+        &.is-active {
+          font-weight: 600;
+          color: unset;
+        }
+      }
+    }
+  }
+}
+
+.bo-photo {
+  width: 120px;
+  height: 120px;
+  margin: auto;
+  border-radius: $radius-full;
+}
+
+.header.is-white {
+  > .inner {
+    > nav {
+      &:nth-last-of-type(2) {
+        > ul {
+          > li {
+            display: block !important;
+          }
+        }
+      }
+      > ul {
+        > li {
+          > a {
+            flex-direction: column;
+            justify-content: center;
+          }
+        }
+      }
+    }
+  }
+}
+
+.react { color: #61dafb; }
+.sass { color: #cf649a; }

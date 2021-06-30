@@ -1,0 +1,91 @@
+@use 'sass:color';
+@import '../common';
+
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(var(--vh, 1vh) * 100);
+
+  main {
+    flex: 1;
+    padding: 50px 0 100px;
+    background-repeat: no-repeat;
+  }
+
+  main .page-circle {
+    position: relative;
+    display: none;
+    margin-top: -115px; /* 65px + 50px (<header> height + <main> padding) */
+    @include ebalance-background();
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      background-size: 100% 100%;
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 20" preserveAspectRatio="none"><path d="M 0 0 Q 100 40 200 0 L 200 40 L 0 40 Z" fill="#{replace-hashtag(#{$color-white})}"/></svg>');
+    }
+
+    /* Whatever follows after the page cirlce must be positioned, because
+    whatever follows often has negative margins and must lay on top of the
+    circle */
+    + * {
+      position: relative;
+    }
+  }
+
+  /* THE SMALL CIRCLE AND EVERYTHING THAT FOLLOWS HIM: MOBILE & DESKTOP */
+
+  main.is-small-circle .page-circle {
+    display: block;
+    height: 125px;
+
+    &::before {
+      height: 40px;
+    }
+  }
+
+  main.is-small-circle .stepindicator {
+    margin-top: -45px;
+  }
+
+  /* THE BIG CIRCLE AND EVERYTHING THAT FOLLOWS HIM: MOBILE */
+
+  main.is-large-circle .page-circle {
+    display: block;
+    height: 470px;
+
+    &::before {
+      height: 30px;
+    }
+  }
+
+  main.is-large-circle .datepicker-nav-wrapper {
+    margin-top: -385px;
+  }
+}
+
+/* THE BIG CIRCLE AND EVERYTHING THAT FOLLOWS HIM: DESKTOP */
+
+@media (min-width: $breakpoint-lg) {
+  .page {
+    main.is-large-circle .page-circle {
+      height: 530px;
+
+      &::before {
+        height: 80px;
+      }
+    }
+
+    main.is-large-circle .datepicker-nav-wrapper {
+      margin-top: -420px;
+    }
+
+    main.is-large-circle .datepicker-nav-wrapper + div {
+      // my-3 mit compactsearch drin, braucht eine Klasse
+      margin: 40px 0 55px !important;
+    }
+  }
+}

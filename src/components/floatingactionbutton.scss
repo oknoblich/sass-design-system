@@ -1,0 +1,23 @@
+@use 'sass:color';
+@import '../common';
+
+.floatingactionbutton {
+  position: fixed;
+  right: 15px;
+  bottom: 15px;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  border-radius: $radius-full;
+  background: $color-blue-2;
+  box-shadow: $global-shadow;
+  cursor: pointer;
+
+  .icon {
+    width: 40px;
+    height: 40px;
+  }
+}

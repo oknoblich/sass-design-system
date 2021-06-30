@@ -1,0 +1,56 @@
+@use 'sass:color';
+@import '../../common';
+
+.textswitch {
+  position: relative;
+  display: flex;
+  font-size: $text-medium;
+  border-radius: $radius-full;
+  background: $color-gray-4;
+}
+
+.textswitch .label {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 20px 9px;
+  color: $color-gray-2;
+  transition: $time;
+  cursor: pointer;
+}
+
+.textswitch input:checked + .label {
+  color: $color-white;
+}
+
+.textswitch .textswitch-indicator {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  border-radius: $radius-full;
+  background: $color-blue-2;
+  transition: $time;
+}
+
+.has-2 .label, .has-2 .textswitch-indicator { width: calc(100% / 2); }
+.has-3 .label, .has-3 .textswitch-indicator { width: calc(100% / 3); }
+.has-4 .label, .has-4 .textswitch-indicator { width: calc(100% / 4); }
+.has-5 .label, .has-5 .textswitch-indicator { width: calc(100% / 5); }
+
+.has-2 input:nth-of-type(2):checked ~ .textswitch-indicator { left: calc((100% / 2)); }
+
+.has-3 input:nth-of-type(2):checked ~ .textswitch-indicator { left: calc((100% / 3)); }
+.has-3 input:nth-of-type(3):checked ~ .textswitch-indicator { left: calc((100% / 3) * 2); }
+
+.has-4 input:nth-of-type(2):checked ~ .textswitch-indicator { left: calc((100% / 4)); }
+.has-4 input:nth-of-type(3):checked ~ .textswitch-indicator { left: calc((100% / 4) * 2); }
+.has-4 input:nth-of-type(4):checked ~ .textswitch-indicator { left: calc((100% / 4) * 3); }
+
+.has-5 input:nth-of-type(2):checked ~ .textswitch-indicator { left: calc((100% / 5)); }
+.has-5 input:nth-of-type(3):checked ~ .textswitch-indicator { left: calc((100% / 5) * 2); }
+.has-5 input:nth-of-type(4):checked ~ .textswitch-indicator { left: calc((100% / 5) * 3); }
+.has-5 input:nth-of-type(5):checked ~ .textswitch-indicator { left: calc((100% / 5) * 4); }

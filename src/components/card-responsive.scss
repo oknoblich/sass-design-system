@@ -1,0 +1,143 @@
+@use 'sass:color';
+@import '../common';
+
+.responsivecard {
+  border-radius: $radius-s;
+  background: $color-white;
+  box-shadow: $global-shadow;
+
+  &:not(:last-child) {
+    margin-bottom: $spacing-4;
+  }
+
+  &.is-eatable {
+    .responsivecard-image {
+      background: no-repeat center center / auto 75% url('../img/responsivecard-eatable.svg');
+    }
+  }
+
+  &.is-motion {
+    .responsivecard-image {
+      background: no-repeat center center / auto 75% url('../img/responsivecard-motion.svg');
+    }
+  }
+
+  &.is-accepted {
+    background-image: linear-gradient(to top, $color-blue-2 7px, transparent 7px);
+  }
+
+  &-image {
+    height: 130px;
+    border-radius: $radius-s $radius-s 0 0;
+    // delete after 0.14 release
+    background: no-repeat center center / auto 75% url('../img/journalcard.svg');
+    overflow: hidden;
+    cursor: pointer;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      /* hide ugly broken image indicator */
+      text-indent: -9999px;
+    }
+  }
+
+  &-content {
+    padding: 20px;
+  }
+
+  &-title {
+    font-size: 19px;
+    font-weight: 700;
+    line-height: 1.2;
+    text-align: center;
+    cursor: pointer;
+    @include crop-whitespace(5, 5);
+  }
+
+  &-calories {
+    display: flex;
+    align-items: center;
+    color: $color-gray-2;
+    white-space: nowrap;
+  }
+
+  &-calories .icon {
+    margin-right: 10px;
+  }
+
+  &-inputs {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+
+  &-inputs > * {
+    min-width: 90px;
+    max-width: 150px;
+  }
+
+  &-inputs > :nth-child(2) {
+    margin: 0 20px;
+  }
+
+  &-inputs .responsivecard-calories {
+    padding-top: 10px;
+  }
+
+  &-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+
+  &-buttons > * {
+    margin: 0 10px;
+  }
+}
+
+@media (min-width: $breakpoint-lg) {
+  .responsivecard {
+    display: flex;
+    align-items: center;
+    height: 130px;
+
+    &.is-accepted {
+      background-image: linear-gradient(to left, $color-blue-2 7px, transparent 7px);
+    }
+
+    &-image {
+      width: 180px;
+      height: 100%;
+      border-radius: $radius-s 0 0 $radius-s;
+    }
+
+    &-content {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      padding: 0 40px;
+    }
+
+    &-description {
+      flex: 1;
+    }
+
+    &-title {
+      text-align: unset;
+    }
+
+    &-inputs {
+      justify-content: unset;
+    }
+
+    &-buttons {
+      margin-top: unset;
+    }
+
+    &-buttons > :last-child {
+      margin-right: unset;
+    }
+  }
+}

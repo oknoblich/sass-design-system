@@ -1,0 +1,20 @@
+@use 'sass:color';
+@import '../common';
+
+.legend {
+  font-size: $text-small;
+  color: $color-gray-2;
+
+  .icon {
+    margin: 0 10px 0 20px;
+  }
+
+  .legend-eaten {
+    display: flex;
+    align-items: center;
+    height: 20px;
+    margin-left: 20px;
+    padding-left: 10px;
+    border-left: 3px solid $color-blue-2;
+  }
+}

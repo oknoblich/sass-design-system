@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Header</title>
+
+  <link rel="stylesheet" href="../assets/css/index.min.css">
+
+</head>
+<body>
+
+  <script>
+
+    ['header', 'offcanvas'].forEach((cur) => {
+
+      document.body.insertAdjacentHTML('beforeend', `
+
+        <div class="${cur}">
+          ${
+            cur === 'header'
+            ? '<div class="header-banner"><p>Lorem ipsum dolor sit amet consectetur adipisicing.</p></div>'
+            : ''
+          }
+          <div class="inner">
+            ${
+              cur === 'header'
+              ? '<a><img src="../assets/img/logo-white.svg"></a>'
+              : ''
+            }
+            <nav>
+              <ul>
+                <li>
+                  <a class="is-active">Nav Item</a>
+                </li>
+                <li>
+                  <a>Nav Item</a>
+                </li>
+                <li>
+                  <div>
+                    <div class="has-subnav">
+                      Nav Item
+                    </div>
+                  </div>
+                  <ul class="nav-subnav">
+                    <li><a>Sub Nav Item</a></li>
+                    <li><a class="is-active">Sub Nav Item</a></li>
+                    <li><a>Sub Nav Item</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a>Nav Item</a>
+                </li>
+                <li>
+                  <a>Nav Item</a>
+                </li>
+                <li>
+                  <div>
+                    <div class="has-subnav">
+                      Hello, Alexandra!
+                    </div>
+                    <div class="nav-photo"></div>
+                  </div>
+                </li>
+                ${
+                  cur === 'header'
+                  ? '<li class="offcanvas-toggle"><svg viewBox="0 0 100 100"><path d="m 70,33 h -40 c 0,0 -8.5,-0.149796 -8.5,8.5 0,8.649796 8.5,8.5 8.5,8.5 h 20 v -20"/><path d="m 70,50 h -40"/><path d="m 30,67 h 40 c 0,0 8.5,0.149796 8.5,-8.5 0,-8.649796 -8.5,-8.5 -8.5,-8.5 h -20 v 20"/></svg></li>'
+                  : ''
+                }
+              </ul>
+            </nav>
+          </div>
+        </div>
+
+      `)
+
+    })
+
+  </script>
+
+  <script src="../assets/js/header.js"></script>
+  <script src="../assets/js/off-canvas.js"></script>
+
+</body>
+</html>

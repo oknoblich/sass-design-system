@@ -1,0 +1,14 @@
+@use 'sass:color';
+@import '../common';
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: calc(#{$grid-gutter} / 2);
+  padding-right: calc(#{$grid-gutter} / 2);
+}
+
+@media (min-width: $breakpoint-sm)  { .container { max-width:  540px; } }
+@media (min-width: $breakpoint-md)  { .container { max-width:  720px; } }
+@media (min-width: $breakpoint-lg)  { .container { max-width:  960px; } }
+@media (min-width: $breakpoint-xl)  { .container { max-width: 1140px; } }

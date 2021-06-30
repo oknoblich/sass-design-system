@@ -1,0 +1,78 @@
+@use 'sass:color';
+@import '../common';
+
+.reducedcard {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 5px;
+  border-bottom: 1px solid $color-gray-4;
+  background: $color-white;
+
+  &.is-eatable {
+    .reducedcard-image {
+      background: no-repeat center center / auto 75% url('../img/responsivecard-eatable.svg');
+    }
+  }
+
+  &.is-motion {
+    .reducedcard-image {
+      background: no-repeat center center / auto 75% url('../img/responsivecard-motion.svg');
+    }
+  }
+
+  &-image {
+    width: 50px;
+    height: 50px;
+    border-radius: $radius-s;
+    // delete after 0.14 release
+    background: no-repeat center center / auto 75% url('../img/journalcard.svg');
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      /* hide ugly broken image indicator */
+      text-indent: -9999px;
+    }
+  }
+
+  &-content {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;
+  }
+
+  &-description {
+    flex: 1;
+  }
+
+  &-title {
+    margin-bottom: 10px;
+    font-weight: 700;
+    @include crop-whitespace(7, 7);
+  }
+
+  &-calories {
+    font-size: $text-small;
+    color: $color-gray-2;
+    @include crop-whitespace(6, 6);
+  }
+
+  &-inputs {
+    display: flex;
+    width: 100%;
+    margin-top: 5px;
+    padding: 10px;
+    border-top: 1px dashed $color-gray-3;
+  }
+
+  &-inputs > * {
+    flex: 1;
+  }
+
+  &-inputs > :nth-child(2) {
+    margin: 0 20px;
+  }
+}

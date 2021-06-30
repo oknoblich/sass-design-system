@@ -1,0 +1,56 @@
+@use 'sass:color';
+@import '../../common';
+
+.toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: $text-medium;
+  line-height: 1;
+  cursor: pointer;
+
+  .label-left,
+  .label-right {
+    color: $color-gray-2;
+    transition: $time;
+  }
+
+  .label-left {
+    order: -1;
+  }
+
+  input {
+    position: relative;
+    width: 40px;
+    height: 20px;
+    margin: 0 10px;
+    border-radius: 20px;
+    background: $color-gray-2;
+    cursor: pointer;
+  }
+
+  input::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    display: block;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: $color-white;
+    transition: $time;
+  }
+
+  input:checked {
+    background: $color-blue-2;
+  }
+
+  input:checked::after {
+    transform: translateX(20px);
+  }
+
+  input:checked ~ .label-right {
+    color: unset;
+  }
+}

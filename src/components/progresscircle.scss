@@ -1,0 +1,119 @@
+@use 'sass:color';
+@import '../common';
+
+$circle-blue-1: #21b0ec;
+$circle-blue-2: #35c1fd;
+
+.progresscircle {
+  position: relative;
+  width: 280px;
+  height: 280px;
+  margin: auto;
+  text-align: center;
+  color: $color-white;
+  border-radius: $radius-full;
+  background:
+    url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none"><path fill="#{replace-hashtag(#{$circle-blue-1})}" fill-opacity="1" d="M0,96L80,106.7C160,117,320,139,480,128C640,117,800,75,960,58.7C1120,43,1280,53,1360,58.7L1440,64L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"/></svg>'),
+    linear-gradient($circle-blue-1 45%, $circle-blue-2 45%, $circle-blue-2 60%, $circle-blue-1)
+  ;
+  background-size: 280px 110px, 280px 280px;
+  background-position: 0 125px, 0 0;
+  background-repeat: no-repeat;
+  box-shadow: $global-shadow;
+
+  * {
+    position: relative;
+    line-height: 1;
+  }
+
+  svg.circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-90deg);
+
+    &:nth-of-type(1) {
+      circle {
+        stroke: #fff;
+      }
+    }
+
+    &:nth-of-type(2) {
+      circle {
+        stroke: #18B;
+      }
+    }
+  }
+
+  .progresscircle-kcal {
+    padding-top: 45px;
+    font-size: 60px;
+    font-weight: 300;
+  }
+  
+  .progresscircle-text {
+    margin-top: 5px;
+    font-size: $text-small;
+  }
+
+  .progresscircle-math {
+    display: flex;
+    justify-content: center;
+    font-size: $text-small;
+
+    > * {
+      margin: 10px 8px 0;
+    }
+
+    span {
+      font-weight: 700;
+    }
+  }
+
+  .progresscircle-progressbars {
+    display: flex;
+    flex-wrap: wrap;
+    width: 65%;
+    margin: 30px auto 0;
+
+    > * {
+      width: 50%;
+    }
+
+    > *:last-child {
+      width: 100%;
+      margin-top: 15px;
+    }
+  }
+}
+
+@media (min-width: $breakpoint-lg) {
+  .progresscircle:not(.prevent-breakpoint) {
+    .progresscircle-math {
+      position: absolute;
+      top: 102px;
+      left: 50%;
+      transform: translateX(-50%);
+      justify-content: space-between;
+      width: 600px;
+      font-size: 16px;
+
+      span {
+        display: block;
+        margin-left: -22px;
+        margin-bottom: 10px;
+        font-size: 40px;
+        font-weight: 300;
+      }
+    }
+  
+    .progresscircle-kcal {
+      padding-top: 55px;
+      font-size: 65px;
+    }
+
+    .progresscircle-progressbars {
+      margin-top: 40px;
+    }
+  }
+}

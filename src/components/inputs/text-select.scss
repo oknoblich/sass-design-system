@@ -1,0 +1,210 @@
+@use 'sass:color';
+@import '../../common';
+
+/* Floating label pattern */
+
+.input {
+  position: relative;
+}
+
+.input > input,
+.input > select {
+  width: 100%;
+  padding: 10px 0;
+  border-bottom: 1px solid color.scale($color-gray-2, $lightness: 45%);
+  background: transparent;
+}
+
+.input > select {
+  background: no-repeat right center / 16px 12px $svg-select-arrow-black;
+}
+
+.input > input[type='date'] {
+  padding: 9px 0;
+}
+
+.input > input[type='date']::-webkit-calendar-picker-indicator {
+  position: absolute;
+  top: 5px;
+  right: 0;
+  width: 40px;
+  height: 30px;
+  border-radius: $radius-s;
+  background: rgb(0 25 50 / 4%) no-repeat center center / 16px 12px $svg-select-arrow-black;
+}
+
+.input > input[type='number']::-webkit-inner-spin-button,
+.input > input[type='number']::-webkit-outer-spin-button {
+  opacity: 1;
+}
+
+.input > label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px 0;
+  color: color.scale($color-gray-2, $lightness: 30%);
+  transform-origin: 0 0;
+  transition: opacity $time, transform $time;
+  pointer-events: none;
+
+  .is-optional {
+    margin-left: 5px;
+    font-size: 12px;
+  }
+}
+
+.input > .per-unit {
+  position: absolute;
+  top: 12px;
+  right: 0;
+  font-size: $text-medium;
+  color: color.scale($color-gray-2, $lightness: 30%);
+  pointer-events: none;
+}
+
+/* Hide placeholder */
+
+.input > input::-webkit-input-placeholder { color: transparent; }
+.input > input::-moz-placeholder { color: transparent; }
+.input > input::placeholder { color: transparent; }
+
+/* Animate label */
+
+.input > input:not(:-moz-placeholder-shown) ~ label {
+  transform: scale(.8) translateY(-25px);
+}
+
+.input > input:focus ~ label,
+.input > input:not(:placeholder-shown) ~ label,
+.input > select ~ label {
+  transform: scale(.8) translateY(-25px);
+}
+
+.input > input:-webkit-autofill ~ label {
+  transform: scale(.8) translateY(-25px);
+}
+
+/* Small stepper buttons */
+
+.input.has-stepper-buttons {
+  width: 120px;
+  margin: 0 10px;
+
+  input {
+    font-family: 'Lato';
+    text-align: center;
+  }
+
+  a {
+    position: absolute;
+    top: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+  }
+
+  a:first-of-type {
+    left: 0;
+    background: no-repeat 50% 50% / 18px 18px $svg-stepper-sm-dec;
+  }
+
+  a:last-of-type {
+    right: 0;
+    background: no-repeat 50% 50% / 18px 18px $svg-stepper-sm-inc;
+  }
+}
+
+/* Large stepper buttons */
+
+.input.has-stepper-buttons.is-large {
+  width: 100%;
+  margin: 0;
+
+  input {
+    padding: 0;
+    font-family: 'Lato';
+    font-size: 45px;
+    font-weight: 300;
+  }
+
+  a {
+    top: 13px;
+    width: 40px;
+    height: 40px;
+  }
+
+  a:first-of-type {
+    background: no-repeat 50% 50% / 40px 40px $svg-stepper-xl-dec;
+  }
+
+  a:last-of-type {
+    background: no-repeat 50% 50% / 40px 40px $svg-stepper-xl-inc;
+  }
+}
+
+/* Small inputs inside centered boxes (e.g. Anamnesis) */
+
+.text-center > .input {
+  width: 80px;
+  margin: 0 20px;
+}
+
+.text-center > .input input {
+  text-align: center;
+}
+
+.text-center > .input .input-error {
+  position: absolute;
+  top: 45px;
+  left: 50%;
+  width: 200px;
+  transform: translateX(-50%);
+}
+
+/* Background on :focus */
+
+.input > input,
+.input > select {
+  background-color: transparent;
+  box-shadow: 0 0 0 10px transparent, 0 -9px 0 10px transparent;
+  transition: background-color $time, box-shadow $time;
+}
+
+.input > input:focus,
+.input > select:focus {
+  background-color: $color-gray-4;
+  box-shadow: 0 0 0 10px $color-gray-4, 0 -9px 0 10px $color-gray-4;
+}
+
+/* No label = shorter background */
+
+.text-center > .input,
+.responsivecard .input,
+.reducedcard .input,
+.input.has-stepper-buttons {
+  input:focus,
+  select:focus {
+    box-shadow: 0 0 0 10px $color-gray-4;
+  }
+}
+
+/* Disabled */
+
+.input > [disabled],
+.input > [disabled] + label {
+  color: $color-gray-1;
+  border-color: color.scale($color-gray-1, $lightness: 40%);
+  opacity: .3;
+}
+
+/* Docs Demo */
+
+.docs-state {
+  margin-bottom: $spacing-2;
+  font-size: $text-small;
+  text-transform: uppercase;
+  color: $color-breakfast;
+}

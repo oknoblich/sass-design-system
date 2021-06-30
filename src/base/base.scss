@@ -1,0 +1,107 @@
+@use 'sass:color';
+@import '../common';
+
+/* Fonts
+ * ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700');
+
+/* Reset
+ * ========================================================================== */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  color: $color-gray-1;
+  background: $color-white;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+p a {
+  color: $color-blue-2;
+}
+
+/* Code
+ * ========================================================================== */
+
+// code {
+//   font-family: Menlo, monospace;
+//   font-size: $text-medium;
+//   white-space: pre;
+//   background: $color-gray-4;
+// }
+
+// div:not(.debug):not(.docs-info) > code {
+//   display: block;
+//   padding: 15px 20px;
+// }
+
+// h2 > code,
+// p > code {
+//   display: inline-block;
+//   padding: 0 8px;
+// }
+
+// td > code {
+//   display: inline-block;
+//   padding: 4px 8px 5px;
+// }
+
+code {
+  display: block;
+  padding: 15px 18px;
+  font-family: Menlo, monospace;
+  font-size: 12px;
+  white-space: pre;
+  color: $color-white;
+  border-radius: $radius-s;
+  background: $color-gray-1;
+}
+
+p > code,
+td > code {
+  display: inline-block;
+  padding: 4px 8px;
+}
+
+/* Selection
+ * ========================================================================== */
+
+::selection {
+  color: $color-white;
+  background: $color-blue-1;
+}
+
+/* No JavaScript | Internet Explorer
+ * ========================================================================== */
+
+.no-JS,
+.is-IE {
+  max-width: 530px;
+  margin: 100px auto;
+  text-align: center;
+}
+
+_:-ms-input-placeholder, :root .is-IE {
+  display: block !important;
+}

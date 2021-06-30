@@ -1,0 +1,17 @@
+{
+  "name": "sass-design-system",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "sass": "^1.35.1"
+  },
+  "devDependencies": {
+    "gh-pages": "^3.2.3"
+  },
+  "scripts": {
+    "watch": "sass src/index.scss:dist/assets/css/index.min.css --style=compressed --watch",
+    "build": "sass src/index.scss:dist/assets/css/index.min.css --style=compressed",
+    "predeploy": "yarn run build",
+    "deploy": "gh-pages -d dist"
+  }
+}

@@ -1,0 +1,38 @@
+@use 'sass:color';
+@import '../common';
+
+.datepicker-nav-wrapper {
+  position: relative;
+  max-width: 300px;
+  margin: auto;
+
+  .datepicker-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    white-space: nowrap;
+    color: $color-white;
+
+    .iconbutton .icon {
+      width: 25px;
+      height: 25px;
+    }
+
+    .iconbutton:last-child .icon {
+      width: 35px;
+      height: 35px;
+      margin-left: 20px;
+    }
+
+    .datepicker-nav-text {
+      flex: 1;
+    }
+  }
+}
+
+@media (min-width: $breakpoint-lg) {
+  .datepicker-nav {
+    font-size: 20px;
+  }
+}

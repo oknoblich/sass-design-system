@@ -1,0 +1,93 @@
+@use 'sass:color';
+@import '../common';
+
+.routercard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border-radius: $radius-s;
+  background: $color-white;
+  box-shadow: $global-shadow;
+  /* to create rounded cornes at the bottom of the image, no matter if the card
+  has content or just the image itself */
+  overflow: hidden;
+  /* Routing somewhere is the whole point of this card, so make it clickable */
+  cursor: pointer;
+
+  &-image {
+    height: 130px;
+    border-radius: $radius-s $radius-s 0 0;
+    background: no-repeat center center / auto 75% url('../img/journalcard.svg');
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      /* hide ugly broken image indicator */
+      text-indent: -9999px;
+    }
+  }
+
+  &-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  &-description {
+    flex: 1;
+  }
+
+  &-title {
+    margin-bottom: 20px;
+    font-weight: 700;
+    line-height: 1.3;
+  }
+
+  &-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: $text-small;
+    white-space: nowrap;
+    color: $color-gray-2;
+  }
+
+  &-buttons .icon {
+    margin: 0 6px;
+  }
+
+  &-buttons .icon:first-child {
+    margin-left: unset;
+  }
+
+  .iconbutton {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 1;
+    transition: $time;
+    filter: drop-shadow(0 1px 1px rgb(0 25 50 / 50%));
+  }
+
+  .iconbutton:last-of-type {
+    left: auto;
+    right: 10px;
+  }
+
+  &-overlay {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 10px 15px;
+    font-weight: 700;
+    line-height: 1.3;
+    color: $color-white;
+    background: linear-gradient(transparent, rgb(0 25 50 / 50%));
+    filter: drop-shadow(0 1px 1px rgb(0 25 50 / 50%));
+  }
+}
