@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Register</title>
+
+  <link rel="stylesheet" href="../assets/css/index.min.css">
+
+</head>
+<body>
+
+  <div class="page">
+
+    <div class="header">
+      <div class="inner">
+        <a><img src="../assets/img/logo-white.svg"></a>
+        <nav>
+          <ul>
+            <li><a>Nav Item</a></li>
+            <li><div class="is-active"><div class="has-subnav">Nav Item</div></div></li>
+            <li><a>Nav Item</a></li>
+            <li><a>Nav Item</a></li>
+            <li><a>Nav Item</a></li>
+            <li><div><div class="has-subnav">Hello, Alexandra!</div><div class="nav-photo"></div></div></li>
+            <li class="offcanvas-toggle"><svg viewBox="0 0 100 100"><path d="m 70,33 h -40 c 0,0 -8.5,-0.149796 -8.5,8.5 0,8.649796 8.5,8.5 8.5,8.5 h 20 v -20"/><path d="m 70,50 h -40"/><path d="m 30,67 h 40 c 0,0 8.5,0.149796 8.5,-8.5 0,-8.649796 -8.5,-8.5 -8.5,-8.5 h -20 v 20"/></svg></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+    <main class="is-small-circle">
+      <div class="page-circle"></div>
+
+      <div class="container">
+        <div class="undraw is-user">
+          <div class="row">
+            <div class="col-12">
+              <h1>Herzlich willkommen!</h1>
+            </div>
+            <div class="col-12">
+              <p>Sie registrieren sich gerade auf der kostenfreien Beta Plattform des neuen eBalance. Bitte beachten Sie, dass keine Synchronisation Ihrer Daten zwischen der alten und neuen eBalance Plattform stattfindet.</p>
+            </div>
+            <div class="col-auto">
+              <label for="FEMALE" class="radio">
+                <input id="FEMALE" value="FEMALE" name="user.attributes.gender" type="radio" required="">
+                <span class="label">Weiblich</span>
+              </label>
+            </div>
+            <div class="col-auto">
+              <label for="MALE" class="radio">
+                <input id="MALE" value="MALE" name="user.attributes.gender" type="radio" required="">
+                <span class="label">Männlich</span>
+              </label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12 col-lg-6">
+              <div class="input"><input type="text" placeholder=" "><label>Vorname</label></div>
+            </div>
+            <div class="col-12 col-lg-6">
+              <div class="input"><input type="text" placeholder=" "><label>Name</label></div>
+            </div>
+            <div class="col-12">
+              <div class="input"><input type="text" placeholder=" "><label>E-Mail</label></div>
+            </div>
+            <div class="col-12">
+              <div class="input"><input type="text" placeholder=" "><label>Benutzername</label></div>
+            </div>
+            <div class="col-12 col-lg-6">
+              <div class="input"><input type="text" placeholder=" "><label>Passwort</label></div>
+            </div>
+            <div class="col-12 col-lg-6">
+              <div class="input"><input type="text" placeholder=" "><label>Passwort bestätigen</label></div>
+            </div>
+            <div class="col-12">
+              <label class="checkbox">
+                <input id="terms" name="user.attributes.terms" value="true" type="checkbox" required="">
+                <span class="label">Ich akzeptiere die <a href="https://webapp.ebalance.dev/agb" target="_blank">allgemeinen Geschäftsbedingungen</a>. Das Abonnement kann jederzeit mit Wirkung zum Ende der Laufzeit gekündigt werden. Die Laufzeit verlängert sich nach Ablauf automatisch.</span>
+              </label>
+            </div>
+            <div class="col-12">
+              <label class="checkbox">
+                <input id="bulimia" name="user.attributes.bulimia" value="true" type="checkbox" required="">
+                <span class="label">Ich bestätige, dass ich mindestens 18 Jahre alt bin, nicht schwanger bin und auch nicht stille, sowie dass ich nicht an Magersucht oder Bulimie erkrankt bin.</span>
+              </label>
+            </div>
+            <div class="col-12">
+              <label class="checkbox">
+                <input id="newsletter" name="user.attributes.newsletter" value="true" type="checkbox">
+                <span class="label">Ich möchte den gratis Newsletter mit Abnehm-Tipps, Rezepten und mehr erhalten.</span>
+              </label>
+            </div>
+            <div class="col-12">
+              <a class="btn">Jetzt registrieren</a>
+              <p class="my-2 text-small text-center text-gray-2">oder</p>
+              <a class="btn is-secondary">Bereits registriert?</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer></footer>
+
+  </div>
+
+  <script src="../assets/js/header.js"></script>
+
+</body>
+</html>
